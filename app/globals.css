@@ -3,31 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  h1 {
+    @apply capitalize text-2xl
+  }
+
+  p {
+    @apply text-lg selection:bg-slate-100 selection:text-black
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .text-link {
+    @apply text-slate-400 hover:underline 
+      hover:text-slate-300 bg-clip-text
+  }
+
+  .blue-purple-gradient {
+    @apply bg-gradient-to-r from-cyan-200 to-purple-300
+  }
 }
+
+@layer components {
+  .particle-background {
+    @apply absolute top-0 left-0 block z-0
+  }
+
+  .tooltip {
+    @apply bg-slate-100 text-slate-900 px-4 py-1 rounded-md
+  }
+
+  .card {
+    @apply bg-slate-100 w-full
+  }
+
+  .nav-button {
+    @apply text-black p-5 text-center text-xl w-full uppercase
+      hover:text-white hover:bg-slate-400 duration-300
+  }
+}
+

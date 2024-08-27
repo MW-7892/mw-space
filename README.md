@@ -3,6 +3,9 @@ An introduction website of M-W (me)!
 
 This will be develop with Next.js on my free time. The website itself is quite static, but I took this as an opportunity to learn some Next.js framework as well!
 
+## 🖼️ Preview
+![image](https://github.com/user-attachments/assets/39e9b960-1b07-4326-be09-6450a3855287)
+
 ## 🎯 Purposes
 * Experiment with my website designing skills.
 * Include this webshite in my CV to show that I can make a website.

@@ -1,6 +1,10 @@
+'use client'
+
 import { Barlow } from "next/font/google"
 import { educations, hobbies, skills } from "@/data/ProfileSummaryItems"
 import { Tooltip } from "@nextui-org/tooltip"
+import { useState } from "react"
+import TextDialogue from "@/components/TextDialogue"
 
 const barlowBold = Barlow({
   weight: "600",
@@ -32,19 +36,38 @@ const SummaryListItems = ({
 }) => {
   return (
     <>
-      { data.map(item => (
-        <Tooltip content={item.shortDesc} classNames={{ content: item.shortDesc ? ['tooltip'] : [] }}>
-          <button
-            className="card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
-              text-slate-100 text-center py-2"
-          >
-            <div className="flex items-center justify-center gap-x-3">
-              <div>{ item.icon }</div>
-              <div>{ item.title }</div>
-            </div>
-          </button>
-        </Tooltip>
-      ))}
+      { data.map(item => {
+        const [isDialogueOpen, setIsDialogueOpen] = useState<boolean>(false)
+        return (
+          <div key={item.title}>
+            <Tooltip
+              placement="right-start"
+              content={item.shortDesc}
+              classNames={{ content: item.shortDesc ? ['tooltip'] : [] }}
+            >
+              <button
+                className="card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
+                  text-slate-100 text-center py-2"
+                onClick={() => setIsDialogueOpen(true)}
+              >
+                <div className="flex items-center justify-center gap-x-3">
+                  <div>{ item.icon }</div>
+                  <div>{ item.title }</div>
+                </div>
+              </button>
+            </Tooltip>
+            <TextDialogue
+                key={item.title}
+                isOpen={isDialogueOpen}
+                onClose={() => setIsDialogueOpen(false)}
+            >
+                <div className="text-slate-900 w-[50vw] h-[100px]">
+                  <div>{ item.icon }</div>
+                  <div>{ item.title }</div>
+                </div>
+            </TextDialogue>
+          </div>
+        )})}
     </>
   )
 }

@@ -21,12 +21,12 @@ export default function MainProfile() {
       </div>
       <div className="grow grid content-start pt-4 lg:pt-0 lg:pl-16 text-center lg:text-left">
         <div className="row h-fit">
-          <text
+          <div
             className={`text-[84px] ${rubikBold.className} align-baseline
                         bg-clip-text text-transparent blue-purple-gradient`}
           >
             MW-7892
-          </text>
+          </div>
         </div>
         <div className="row">
           <p>

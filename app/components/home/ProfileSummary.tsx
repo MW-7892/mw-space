@@ -4,7 +4,7 @@ import { Barlow } from "next/font/google"
 import { educations, hobbies, skills } from "@/data/ProfileSummaryItems"
 import { Tooltip } from "@nextui-org/tooltip"
 import { useState } from "react"
-import TextDialogue from "@/components/TextDialogue"
+import TextDialog from "@/components/TextDialog"
 
 const barlowBold = Barlow({
   weight: "600",
@@ -37,18 +37,19 @@ const SummaryListItems = ({
   return (
     <>
       { data.map(item => {
-        const [isDialogueOpen, setIsDialogueOpen] = useState<boolean>(false)
+        const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
         return (
           <div key={item.title}>
             <Tooltip
               placement="right-start"
               content={item.shortDesc}
-              classNames={{ content: item.shortDesc ? ['tooltip'] : [] }}
+              classNames={{ content: item.shortDesc ? ['tooltip capitalize'] : [] }}
             >
               <button
-                className="card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
-                  text-slate-100 text-center py-2"
-                onClick={() => setIsDialogueOpen(true)}
+                className={`card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
+                  text-slate-100 text-center py-2 active:bg-slate-500/50
+                  ${isDialogOpen ? 'bg-slate-500/25' : ''}`}
+                onClick={() => setIsDialogOpen(true)}
               >
                 <div className="flex items-center justify-center gap-x-3">
                   <div>{ item.icon }</div>
@@ -56,16 +57,17 @@ const SummaryListItems = ({
                 </div>
               </button>
             </Tooltip>
-            <TextDialogue
+            <TextDialog
                 key={item.title}
-                isOpen={isDialogueOpen}
-                onClose={() => setIsDialogueOpen(false)}
+                isOpen={isDialogOpen}
+                onClose={() => setIsDialogOpen(false)}
             >
-                <div className="text-slate-900 w-[50vw] h-[100px]">
-                  <div>{ item.icon }</div>
-                  <div>{ item.title }</div>
+                <div className="text-white w-[80vw] max-w-[500px] h-fit">
+                  <h1 className="font-semibold">{ item.title }</h1>
+                  <h2 className="text-slate-400 mb-4 capitalize">{ item.shortDesc }</h2>
+                  <p className="text-slate-300 text-[18px]">{ item.description }</p>
                 </div>
-            </TextDialogue>
+            </TextDialog>
           </div>
         )})}
     </>
@@ -75,14 +77,6 @@ const SummaryListItems = ({
 export default function ProfileSummary() {
   return (
     <div>
-      <div 
-        className="card rounded-md bg-transparent border border-slate-300
-          text-slate-100 mb-6 text-center py-2"
-      >
-        <h1 className={`${barlowBold.className}`}>
-          A Brief Look
-        </h1>
-      </div>
       <div className="card rounded-md p-6 bg-slate-800/70 h-fit border border-slate-700">
         <div 
           className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3

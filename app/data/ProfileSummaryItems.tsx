@@ -7,17 +7,19 @@ export const educations: SummaryListItemData[] = [
   { 
     icon: '🖥️',
     title: 'Visual Alpha',
-    shortDesc: 'Sep 2023 - Present',
+    shortDesc: 'Sep 2023 - Present, Full-Stack Dev',
+    description: `I worked as a full-stack developer internship position at Visual Alpha,
+      a FinTech company.`
   },
   {
     icon: '🎓',
     title: 'Tokyo Institute of Technology',
-    shortDesc: 'Apr 2022 - Mar 2026 (GPA 3.95/4.50)',
+    shortDesc: 'Apr 2022 - Mar 2026, GPA 3.95/4.50',
   },
   {
     icon: '🏫',
     title: 'Mahidol Wittayanusorn',
-    shortDesc: 'May 2019 - Mar 2022 (GPA 3.98/4.00)'
+    shortDesc: 'May 2019 - Mar 2022, GPA 3.98/4.00'
   },
 ]
 
@@ -29,6 +31,14 @@ export const skills: SummaryListItemData[] = [
 ]
 
 export const hobbies: SummaryListItemData[] = [
-  { icon: '🕹️', title: 'maimai' },
-  { icon: '⌨️', title: 'Typing' },
+  {
+    icon: '🕹️',
+    title: 'maimai',
+    shortDesc: 'Rating 14,636 as of Buddies+'
+  },
+  {
+    icon: '⌨️',
+    title: 'Typing',
+    shortDesc: 'Top Speed: 106 WPM, 80-90 on Average'
+  },
 ]

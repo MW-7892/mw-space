@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✨ MW-Space
+An introduction website of M-W (me)!
 
-## Getting Started
+This will be develop with Next.js on my free time. The website itself is quite static, but I took this as an opportunity to learn some Next.js framework as well!
 
-First, run the development server:
+## 🎯 Purposes
+* Experiment with my website designing skills.
+* Include this webshite in my CV to show that I can make a website.
+* Learn how Next.js works.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🤔 Design Considerations
+* Moderate to low abstraction layer, try to implement the UI from low-level as much as possible.
+* Optimized, shouldn't take too long to load.
+* Aesthetic but simple. The website should looks good but doesn't use too many fancy effects.
+* Intuitive design. I mostly guessed which design is "intuitive," so it might not be optimal, but should be as easy to understand as possible.  

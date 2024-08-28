@@ -1,15 +1,9 @@
 'use client'
 
-import { Barlow } from "next/font/google"
 import { educations, hobbies, skills } from "@/data/ProfileSummaryItems"
 import { Tooltip } from "@nextui-org/tooltip"
 import { useState } from "react"
 import TextDialog from "@/components/TextDialog"
-
-const barlowBold = Barlow({
-  weight: "600",
-  subsets: ['latin']
-})
 
 const TitleCard = ({ text }: { text: string }) => {
   return (
@@ -64,8 +58,8 @@ const SummaryListItems = ({
             >
                 <div className="text-white w-[80vw] max-w-[500px] h-fit">
                   <h1 className="font-semibold">{ item.title }</h1>
-                  <h2 className="text-slate-400 mb-4 capitalize">{ item.shortDesc }</h2>
-                  <p className="text-slate-300 text-[18px]">{ item.description }</p>
+                  <h2 className="text-slate-500 mb-4 capitalize">{ item.shortDesc }</h2>
+                  <p className='text-slate-400 text-[18px]'>{ item.description }</p>
                 </div>
             </TextDialog>
           </div>

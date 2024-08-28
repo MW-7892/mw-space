@@ -52,12 +52,22 @@ body {
   }
 
   .card {
-    @apply bg-slate-100 w-full
+    @apply bg-slate-100 w-full h-fit
   }
 
   .nav-button {
-    @apply text-black p-5 text-center text-xl w-full uppercase
-      hover:text-white hover:bg-slate-400 duration-300
+    @apply w-full flex place-content-center p-5 relative text-white
+      active:text-white/50 duration-200
+  }
+  
+  .nav-button-icon {
+    @apply place-content-center text-xl uppercase
+      opacity-0 ease-in-out pr-4 duration-300 absolute top-1/2 -translate-y-1/2
+  }
+
+  .nav-button-text {
+    @apply text-center text-xl uppercase
+      ease-in-out duration-300
   }
 }
 

@@ -1,7 +1,7 @@
 # ✨ MW-Space
 An introduction website of M-W (me)!
 
-This will be develop with Next.js on my free time. The website itself is quite static, but I took this as an opportunity to learn some Next.js framework as well!
+This will be developed with Next.js on my free time. The website itself is quite static, but I took this as an opportunity to learn some Next.js framework as well!
 
 ## 🖼️ Preview
 ![image](https://github.com/user-attachments/assets/92a38e90-3c0b-4566-953e-1117b31640f4)

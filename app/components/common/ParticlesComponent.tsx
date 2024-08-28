@@ -42,18 +42,10 @@ export default function ParticlesComponent() {
             enable: true,
             mode: "push",
           },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
         },
         modes: {
           push: {
             quantity: 4,
-          },
-          repulse: {
-            distance: 50,
-            duration: 10,
           },
         },
       },

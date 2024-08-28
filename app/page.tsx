@@ -9,7 +9,7 @@ const robotoMono = Roboto_Mono({
 
 export default function Home() {
   return (
-    <div className={`grid gap-y-16 ${robotoMono.className} my-14 mx-16`}>
+    <div className={`grid gap-y-16 ${robotoMono.className} scale-90 lg:scale-100 my-14 lg:mx-16`}>
       <MainProfile />
       <ProfileSummary />
     </div>

@@ -53,7 +53,7 @@ export default function NavBar() {
   ]
 
   return (
-    <div className={`flex flex-col min-h-screen w-full bg-slate-900/50 sticky top-0 pt-6 ${rubik.className}`}>
+    <div className={`flex flex-col h-screen w-full bg-slate-900/50 sticky top-0 pt-6 ${rubik.className}`}>
       { routes.map(route => (
         <button className="nav-button group" onClick={() => router.push(route.link)}>
           <div className="nav-button-icon group-hover:opacity-100 group-hover:-translate-x-9">

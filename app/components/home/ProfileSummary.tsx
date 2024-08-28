@@ -3,7 +3,7 @@
 import { educations, hobbies, skills } from "@/data/ProfileSummaryItems"
 import { Tooltip } from "@nextui-org/tooltip"
 import { useState } from "react"
-import TextDialog from "@/components/TextDialog"
+import TextDialog from "@/components/common/TextDialog"
 
 const TitleCard = ({ text }: { text: string }) => {
   return (

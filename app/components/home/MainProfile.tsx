@@ -1,8 +1,8 @@
-import { Rubik } from "next/font/google"
+import { Lexend_Deca } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 
-const rubikBold = Rubik({
+const lexendDeca = Lexend_Deca({
   weight: "400",
   subsets: ['latin']
 })
@@ -22,13 +22,13 @@ export default function MainProfile() {
       <div className="grow grid content-start pt-4 lg:pt-0 lg:pl-16 text-center lg:text-left">
         <div className="row h-fit">
           <div
-            className={`text-[84px] ${rubikBold.className} align-baseline
+            className={`text-[84px] ${lexendDeca.className} align-baseline
                         bg-clip-text text-transparent blue-purple-gradient`}
           >
             MW-7892
           </div>
         </div>
-        <div className="row">
+        <div className="row pl-2">
           <p>
             Hi! 👋 I enjoy working with computer, especially ones that requires coding. This site is created to 
             express myself and displays projects that I have decided to work on.

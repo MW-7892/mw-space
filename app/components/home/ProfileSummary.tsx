@@ -8,7 +8,7 @@ import TextDialog from "@/components/common/TextDialog"
 const TitleCard = ({ text }: { text: string }) => {
   return (
     <div
-      className="card rounded-md bg-slate-600 capitalize text-slate-100
+      className="card rounded-md bg-amber-400/90 mix-blend-screen capitalize text-black
         text-center font-semibold text-xl py-2"
     >
       { text }
@@ -57,8 +57,8 @@ const SummaryListItems = ({
                 onClose={() => setIsDialogOpen(false)}
             >
                 <div className="text-white w-[80vw] max-w-[500px] h-fit">
-                  <h1 className="font-semibold">{ item.title }</h1>
-                  <h2 className="text-slate-500 mb-4 capitalize">{ item.shortDesc }</h2>
+                  <h3 className="font-semibold">{ item.title }</h3>
+                  <h4 className="text-slate-500 mb-4 capitalize">{ item.shortDesc }</h4>
                   <p className='text-slate-400 text-[18px]'>{ item.description }</p>
                 </div>
             </TextDialog>

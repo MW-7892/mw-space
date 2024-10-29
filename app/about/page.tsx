@@ -1,6 +1,9 @@
-import AboutBackground from "@/components/about/sections/AboutBackground"
+import AboutSummary from "@/components/about/sections/AboutSummary"
+import AboutEducation from "@/components/about/sections/AboutEducation"
 import { Lexend_Deca } from "next/font/google"
 import { FaInfo } from "react-icons/fa"
+import AboutWork from "@/components/about/sections/AboutWork"
+import AboutNavigation from "@/components/about/AboutNavigation"
 
 const lexendDeca = Lexend_Deca({
   weight: "400",
@@ -20,9 +23,14 @@ export default function About () {
         </div>
         <div> <h1 className={`${lexendDeca.className}`}>About Me</h1> </div>
       </div>
-      <div className="grid grid-cols-1 mt-8">
-        <div>
-          <AboutBackground />
+      <div className="grid grid-cols-6 mt-8">
+        <div className="col-span-5 space-y-6">
+          <AboutSummary />
+          <AboutWork />
+          <AboutEducation />
+        </div>
+        <div className="col-span-1">
+          <AboutNavigation />
         </div>
       </div>
     </div>

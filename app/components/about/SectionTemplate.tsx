@@ -24,7 +24,7 @@ export default function SectionTemplate({
         </div>
         <div className="grid grid-cols-1 gap-y-5">
           { data.map(item => (
-            <div>
+            <div key={ item.title }>
               <h3 className="text-lg font-bold text-slate-200 mb-1">
                 { item.title }
               </h3>

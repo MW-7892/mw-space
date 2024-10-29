@@ -55,7 +55,7 @@ export default function NavBar() {
   return (
     <div className={`flex flex-col h-screen w-full bg-slate-900/50 sticky top-0 pt-6 ${rubik.className}`}>
       { routes.map(route => (
-        <button className="nav-button group" onClick={() => router.push(route.link)}>
+        <button key={route.link} className="nav-button group" onClick={() => router.push(route.link)}>
           <div className="nav-button-icon group-hover:opacity-100 group-hover:-translate-x-9">
             { route.icon }
           </div>
@@ -68,7 +68,7 @@ export default function NavBar() {
             justify-center gap-x-3" 
         >
           { contacts.map(contact => (
-            <Link href={contact.link} className="hover:text-slate-200 duration-300">
+            <Link key={contact.link} href={contact.link} className="hover:text-slate-200 duration-300">
               { contact.icon }
             </Link>
           ))}

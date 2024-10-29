@@ -23,6 +23,42 @@ export type SummaryListItemData = {
   description?: string
 }
 
+const SummaryItem = ({ item } : { item : SummaryListItemData }) => {
+    const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+    return (
+      <div key={item.title}>
+        <Tooltip
+          placement="right-start"
+          content={item.shortDesc}
+          classNames={{ content: item.shortDesc ? ['tooltip capitalize'] : [] }}
+        >
+          <button
+            className={`card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
+              text-slate-100 text-center py-2 active:bg-slate-500/50
+              ${isDialogOpen ? 'bg-slate-500/25' : ''}`}
+            onClick={() => setIsDialogOpen(true)}
+          >
+            <div className="flex items-center justify-center gap-x-3">
+              <div>{ item.icon }</div>
+              <div>{ item.title }</div>
+            </div>
+          </button>
+        </Tooltip>
+        <TextDialog
+            key={item.title}
+            isOpen={isDialogOpen}
+            onClose={() => setIsDialogOpen(false)}
+        >
+            <div className="text-white w-[80vw] max-w-[500px] h-fit">
+              <h3 className="font-semibold">{ item.title }</h3>
+              <h4 className="text-slate-500 mb-4 capitalize">{ item.shortDesc }</h4>
+              <p className='text-slate-400 text-[18px]'>{ item.description }</p>
+            </div>
+        </TextDialog>
+      </div>
+    )
+}
+
 const SummaryListItems = ({
   data
 }: {
@@ -30,40 +66,7 @@ const SummaryListItems = ({
 }) => {
   return (
     <>
-      { data.map(item => {
-        const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
-        return (
-          <div key={item.title}>
-            <Tooltip
-              placement="right-start"
-              content={item.shortDesc}
-              classNames={{ content: item.shortDesc ? ['tooltip capitalize'] : [] }}
-            >
-              <button
-                className={`card rounded-md bg-transparent hover:bg-slate-500/25 duration-200
-                  text-slate-100 text-center py-2 active:bg-slate-500/50
-                  ${isDialogOpen ? 'bg-slate-500/25' : ''}`}
-                onClick={() => setIsDialogOpen(true)}
-              >
-                <div className="flex items-center justify-center gap-x-3">
-                  <div>{ item.icon }</div>
-                  <div>{ item.title }</div>
-                </div>
-              </button>
-            </Tooltip>
-            <TextDialog
-                key={item.title}
-                isOpen={isDialogOpen}
-                onClose={() => setIsDialogOpen(false)}
-            >
-                <div className="text-white w-[80vw] max-w-[500px] h-fit">
-                  <h3 className="font-semibold">{ item.title }</h3>
-                  <h4 className="text-slate-500 mb-4 capitalize">{ item.shortDesc }</h4>
-                  <p className='text-slate-400 text-[18px]'>{ item.description }</p>
-                </div>
-            </TextDialog>
-          </div>
-        )})}
+      { data.map(item => <SummaryItem key={item.title} item={item} />)}
     </>
   )
 }

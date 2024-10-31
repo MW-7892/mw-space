@@ -1,6 +1,13 @@
+import { Inter } from "next/font/google";
 import SectionContainer from "./SectionContainer";
 
+const inter = Inter({
+  weight: ["300", "400"],
+  subsets: ["latin"],
+});
+
 export interface AboutData {
+  suptitle?: string;
   title?: string;
   subtitle?: string;
   description: string | string[];
@@ -8,7 +15,9 @@ export interface AboutData {
 
 const ListItems = ({ data }: { data: string[] }) => {
   return (
-    <ul className="list-disc text-slate-400 ml-4 space-y-1">
+    <ul
+      className={`list-disc text-slate-300 ml-4 space-y-1 ${inter.className} font-light mt-2`}
+    >
       {data.map((item) => (
         <li key={item}>{item}</li>
       ))}
@@ -32,27 +41,34 @@ export default function SectionTemplate({
   return (
     <SectionContainer borderColor={borderColor}>
       <>
-        <div className={`w-fit mb-6 ${textColor}`}>
+        <div className={`w-fit mb-5 ${textColor}`}>
           <h2 className="text-2xl mb-2">{title}</h2>
         </div>
         <div className="grid grid-cols-1 gap-y-5">
           {data.map((item) => (
             <div key={item.title}>
               {item.title && (
-                <h3 id={id} className="text-lg font-bold text-slate-200 mb-1">
-                  {item.title}
-                  <span
-                    className={`ml-2 text-sm font-thin ${textColor} align-middle`}
-                  >
+                <>
+                  <p className={`text-sm italic text-slate-300 mb-1`}>
                     {" "}
-                    {item.subtitle}{" "}
-                  </span>
-                </h3>
+                    {item.suptitle}{" "}
+                  </p>
+                  <h3 id={id} className="text-lg font-bold text-slate-200 mb-1">
+                    {item.title}
+                    <span
+                      className={`ml-2 text-sm normal-case font-thin ${textColor} align-middle`}
+                    >
+                      {item.subtitle}
+                    </span>
+                  </h3>
+                </>
               )}
               {Array.isArray(item.description) ? (
                 <ListItems data={item.description} />
               ) : (
-                <p className={`text-slate-${item.title ? 400 : 200}`}>
+                <p
+                  className={`${inter.className} ${item.title ? "text-slate-300 text-[16px] font-light" : "text-slate-200"}`}
+                >
                   {item.description}
                 </p>
               )}

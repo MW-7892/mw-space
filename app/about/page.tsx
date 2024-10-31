@@ -1,16 +1,18 @@
-import AboutSummary from "@/components/about/sections/AboutSummary"
-import AboutEducation from "@/components/about/sections/AboutEducation"
-import { Lexend_Deca } from "next/font/google"
-import { FaInfo } from "react-icons/fa"
-import AboutWork from "@/components/about/sections/AboutWork"
-import AboutNavigation from "@/components/about/AboutNavigation"
+import AboutSummary from "@/components/about/sections/AboutSummary";
+import AboutEducation from "@/components/about/sections/AboutEducation";
+import { Lexend_Deca } from "next/font/google";
+import { FaInfo } from "react-icons/fa";
+import AboutWork from "@/components/about/sections/AboutWork";
+import AboutNavigation from "@/components/about/AboutNavigation";
+import AboutProjects from "@/components/about/sections/AboutProjects";
+import AboutSkills from "@/components/about/sections/AboutSkills";
 
 const lexendDeca = Lexend_Deca({
   weight: "400",
-  subsets: ['latin']
-})
+  subsets: ["latin"],
+});
 
-export default function About () {
+export default function About() {
   return (
     <div className="m-10 mt-24 lg:mt-10">
       <div className="flex flex-wrap">
@@ -21,18 +23,23 @@ export default function About () {
         >
           <FaInfo />
         </div>
-        <div> <h1 className={`${lexendDeca.className}`}>About Me</h1> </div>
+        <div>
+          {" "}
+          <h1 className={`${lexendDeca.className}`}>About Me</h1>{" "}
+        </div>
       </div>
-      <div className="grid grid-cols-6 mt-8">
-        <div className="col-span-5 space-y-6">
+      <div className="grid grid-cols-5 mt-8 gap-x-5">
+        <div className="col-span-5 md:col-span-4 space-y-6">
           <AboutSummary />
           <AboutWork />
+          <AboutProjects />
           <AboutEducation />
+          <AboutSkills />
         </div>
-        <div className="col-span-1">
+        <div className="hidden md:block col-span-1">
           <AboutNavigation />
         </div>
       </div>
     </div>
-  )
+  );
 }

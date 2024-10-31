@@ -14,7 +14,9 @@ const poppins = Poppins({
 const navigations: NavigationLink[] = [
   { title: "Summary", id: "summary" },
   { title: "Work", id: "work" },
+  { title: "Projects", id: "projects" },
   { title: "Education", id: "education" },
+  { title: "Skills", id: "skills" },
 ];
 
 export default function AboutNavigation() {

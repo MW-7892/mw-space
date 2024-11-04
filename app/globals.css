@@ -42,7 +42,7 @@ body {
   }
 
   .blue-purple-gradient {
-    @apply bg-gradient-to-r from-cyan-200 to-purple-300
+    @apply bg-gradient-to-r from-cyan-200 to-purple-400
   }
 
   .modal-open {

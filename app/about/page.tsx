@@ -24,7 +24,6 @@ export default function About() {
           <FaInfo />
         </div>
         <div>
-          {" "}
           <h1 className={`${lexendDeca.className}`}>About Me</h1>{" "}
         </div>
       </div>

@@ -21,10 +21,9 @@ const navigations: NavigationLink[] = [
 
 export default function AboutNavigation() {
   return (
-    <>
+    <div className="bg-black/80 p-5 rounded-lg sticky top-10">
       <h3 className={`${poppins.className} mb-6 font-bold text-slate-200`}>
-        {" "}
-        Contents{" "}
+        Contents
       </h3>
       <ul className={`${poppins.className} space-y-4 font-thin text-slate-300`}>
         {navigations.map((navigation) => (
@@ -39,6 +38,6 @@ export default function AboutNavigation() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

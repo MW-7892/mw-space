@@ -16,7 +16,7 @@ const navigations: NavigationLink[] = [
   { title: "Work", id: "work" },
   { title: "Projects", id: "projects" },
   { title: "Education", id: "education" },
-  { title: "Skills", id: "skills" },
+  { title: "Skills & Interests", id: "skills" },
 ];
 
 export default function AboutNavigation() {

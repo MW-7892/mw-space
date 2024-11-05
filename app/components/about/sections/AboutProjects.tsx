@@ -3,7 +3,7 @@ import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
 export const projects: AboutData[] = [
   {
     title: "M-W space",
-    subtitle: "mw7892.com",
+    subtitle: { name: "mw7892.com", link: "https://mw7892.com" },
     description:
       "A personal website developed using Next.js and TailwindCSS to practice my web development skill from scratch",
   },

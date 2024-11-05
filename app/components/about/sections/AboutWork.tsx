@@ -4,7 +4,10 @@ export const work: AboutData[] = [
   {
     suptitle: "Sep 2022 - Present",
     title: "Full-stack Developer Internship",
-    subtitle: "@ Visual Alpha",
+    subtitle: {
+      name: "@ Visual Alpha",
+      link: "https://visual-alpha.com/en/index/",
+    },
     description: [
       "Develop a full-stack financial monitoring platform using React.js, GraphQL, and Laravel",
       "Learned version control system and CI/CD process in web development",

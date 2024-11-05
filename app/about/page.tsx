@@ -28,14 +28,14 @@ export default function About() {
         </div>
       </div>
       <div className="grid grid-cols-5 mt-8 gap-x-5">
-        <div className="col-span-5 md:col-span-4 space-y-6">
+        <div className="col-span-5 lg:col-span-4 space-y-6">
           <AboutSummary />
           <AboutWork />
           <AboutProjects />
           <AboutEducation />
           <AboutSkills />
         </div>
-        <div className="hidden md:block col-span-1">
+        <div className="hidden lg:block col-span-1">
           <AboutNavigation />
         </div>
       </div>

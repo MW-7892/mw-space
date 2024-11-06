@@ -6,7 +6,7 @@ import MobileNav from "./components/common/MobileNav";
 
 export const metadata: Metadata = {
   title: "M-W Space",
-  description: "A space for M-W",
+  description: "A personal website of M-W",
 };
 
 export default function RootLayout({
@@ -25,9 +25,7 @@ export default function RootLayout({
             <NavBar />
           </div>
           <MobileNav />
-          <div className="col-span-12 lg:col-span-10">
-            {children}
-          </div>
+          <div className="col-span-12 lg:col-span-10">{children}</div>
         </div>
       </body>
     </html>

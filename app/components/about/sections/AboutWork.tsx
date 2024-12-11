@@ -2,7 +2,7 @@ import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
 
 export const work: AboutData[] = [
   {
-    suptitle: "Sep 2022 - Present",
+    suptitle: "Sep 2023 - Present",
     title: "Full-stack Developer Internship",
     subtitle: {
       name: "@ Visual Alpha",

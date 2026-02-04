@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -39,7 +39,7 @@ export default function ParticlesComponent() {
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push",
           },
         },
@@ -74,7 +74,7 @@ export default function ParticlesComponent() {
           density: {
             enable: true,
           },
-          value: 90,
+          value: 150,
         },
         opacity: {
           value: 0.45,
@@ -92,12 +92,7 @@ export default function ParticlesComponent() {
   );
 
   if (init) {
-    return (
-      <Particles
-        id="tsparticles"
-        options={options}
-      />
-    );
+    return <Particles id="tsparticles" options={options} />;
   }
 
   return <></>;

@@ -13,17 +13,17 @@ const lexendDeca = Lexend_Deca({
 export default function MainProfile() {
   const router = useRouter();
   return (
-    <div className="flex flex-wrap lg:flex-nowrap justify-center">
+    <div className="px-2 flex flex-wrap justify-center">
       <div className="flex-none">
         <Image
           src="/profile.png"
-          width={300}
-          height={300}
+          width={128}
+          height={128}
           className="rounded-full m-auto"
           alt="M-W's Profile Image"
         />
       </div>
-      <div className="grow grid content-start pt-4 lg:pt-2 lg:pl-16 text-center lg:text-left">
+      <div className="grow grid content-start pt-4 text-center">
         <div className="row h-fit">
           <div
             className={`text-[84px] ${lexendDeca.className} align-baseline
@@ -38,7 +38,7 @@ export default function MainProfile() {
             coding. This site is created to express myself and displays projects
             that I have decided to work on.
           </p>
-          <div className="row flex justify-center lg:justify-normal">
+          <div className="row flex justify-center">
             <div
               className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-content
                          w-fit rounded-md"

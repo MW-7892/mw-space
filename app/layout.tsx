@@ -3,11 +3,18 @@ import "./globals.css";
 import NavBar from "./components/common/NavBar";
 import ParticlesComponent from "./components/common/ParticlesComponent";
 import MobileNav from "./components/common/MobileNav";
+import Terminal from "./components/home/Terminal";
+import { Space_Grotesk } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "M-W Space",
   description: "A personal website of M-W",
 };
+
+const bodyFont = Space_Grotesk({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -16,17 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <div className="z-[-1] fixed inset-0">
+      <body className={`${bodyFont.className} overflow-hidden`}>
+        <div className="-z-10 fixed inset-0">
           <ParticlesComponent />
         </div>
-        <div className="grid grid-cols-12">
-          <div className="hidden lg:flex lg:col-span-2">
-            <NavBar />
-          </div>
-          <MobileNav />
-          <div className="col-span-12 lg:col-span-10">{children}</div>
-        </div>
+        <Terminal>{children}</Terminal>
       </body>
     </html>
   );

@@ -11,22 +11,6 @@ body {
   background: rgb(var(--background-start-rgb));
 }
 
-.simplebar-track.simplebar-horizontal {
-  @apply w-0
-}
-
-.simplebar-track.simplebar-vertical {
-  @apply w-2
-}
-
-.simplebar-scrollbar {
-  @apply bg-white opacity-50
-}
-
-.simplebar-scrollbar.simplebar-visible::before {
-  @apply opacity-0
-}
-
 @layer base {
   h1 {
     @apply text-5xl font-bold
@@ -91,15 +75,6 @@ body {
   .nav-button-text {
     @apply text-center text-xl uppercase
       ease-in-out duration-300
-  }
-  .simplebar-content {
-    @apply mr-4
-  }
-  .simplebar-scroll-content {
-    @apply bg-red-500 w-2
-  }
-  .simplebar-track {
-    @apply bg-transparent h-full py-2 mx-2
   }
   .modal-open {
     @apply overflow-hidden

@@ -29,7 +29,7 @@ export default function RootLayout({
           <ParticlesComponent />
         </div>
         <div className="flex justify-center gap-x-8">
-          <div className="hidden xl:block w-[200px] h-fit">
+          <div className="hidden xl:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 opacity-0">
             <Terminal title="navbar">
               <NavBar />
             </Terminal>

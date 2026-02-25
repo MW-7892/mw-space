@@ -49,60 +49,94 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-
   .text-link {
     @apply text-slate-400 hover:underline 
       hover:text-slate-300 bg-clip-text
   }
-
   .blue-purple-gradient {
     @apply bg-gradient-to-r from-cyan-200 to-purple-400
   }
-
-  .modal-open {
-    @apply overflow-hidden
+	.animation-delay-100 {
+    animation-delay: 100ms;
   }
-
-  .simplebar-content {
-    @apply mr-4
+  .animation-delay-500 {
+    animation-delay: 500ms;
   }
-
-  .simplebar-scroll-content {
-    @apply bg-red-500 w-2
+  .animation-delay-1000 {
+    animation-delay: 1s;
   }
-
-  .simplebar-track {
-    @apply bg-transparent h-full py-2 mx-2
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
   }
-
 }
 
 @layer components {
   .particle-background {
     @apply absolute top-0 left-0 block z-0
   }
-
   .tooltip {
     @apply bg-slate-100 text-slate-900 px-4 py-1 rounded-md
   }
-
   .card {
     @apply bg-slate-100 w-full h-fit
   }
-
   .nav-button {
     @apply w-full flex place-content-center p-5 relative text-white
       active:text-white/50 duration-200
   }
-  
   .nav-button-icon {
     @apply place-content-center text-xl uppercase
       opacity-0 ease-in-out pr-4 duration-300 absolute top-1/2 -translate-y-1/2
   }
-
   .nav-button-text {
     @apply text-center text-xl uppercase
       ease-in-out duration-300
   }
+  .simplebar-content {
+    @apply mr-4
+  }
+  .simplebar-scroll-content {
+    @apply bg-red-500 w-2
+  }
+  .simplebar-track {
+    @apply bg-transparent h-full py-2 mx-2
+  }
+  .modal-open {
+    @apply overflow-hidden
+  }
 }
 
+@theme {
+	--animate-terminal-popup: terminal-popup 1.2s forwards;
+	@keyframes terminal-popup {
+		0% {
+			transform: translateY(120%);
+			opacity: 100%;
+		}
+		100% {
+			transform: translateY(0%);
+			opacity: 100%;
+		}
+	};
+
+	--animate-loading-page: loading-page 1s ease-in forwards;
+	@keyframes loading-page {
+		0% {
+			opacity: 100%;
+		}
+		100% {
+			opacity: 0%;
+			visibility: hidden;
+		}
+	}
+
+	--animate-page-loading-bar: page-loading-bar 0.8s forwards ease-in-out;
+	@keyframes page-loading-bar {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 100%;
+		}
+}
+}

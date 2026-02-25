@@ -1,10 +1,9 @@
-import { Poppins } from "next/font/google";
-import MainProfile from "./components/home/MainProfile";
+import ProfileTop from "./components/home/ProfileTop";
 
 export default function Home() {
   return (
     <div>
-      <MainProfile />
+      <ProfileTop />
     </div>
   );
 }

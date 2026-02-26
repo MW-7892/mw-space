@@ -1,32 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --p: 1rem;
+  --font-scale: 1.2;
+  --h6: calc(var(--p) * var(--font-scale));
+  --h5: calc(var(--h6) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: var(--color-foreground);
+  background: var(--color-background);
 }
 
 @layer base {
-  h1 {
-    @apply text-5xl font-bold
-  }
-
-  h2 {
-    @apply text-3xl font-bold
-  }
-
-  h3 {
-    @apply capitalize text-2xl
-  }
-
-  p {
-    @apply text-lg selection:bg-slate-100 selection:text-black
-  }
+	p {
+		font-size: var(--p);
+	}
+	h6 {
+		font-size: var(--h6);
+	}
+	h5 {
+		font-size: var(--h5);
+	}
+	h4 {
+		font-size: var(--h4);
+	}
+	h3 {
+		font-size: var(--h3);
+		font-weight: 500;
+	}
+	h2 {
+		font-size: var(--h2);
+		font-weight: 500;
+		font-family: var(--font-title);
+	}
+	h1 {
+		font-size: var(--h1);
+		font-weight: 500;
+		font-family: var(--font-title);
+	}
 }
 
 @layer utilities {
@@ -37,8 +53,11 @@ body {
     @apply text-slate-400 hover:underline 
       hover:text-slate-300 bg-clip-text
   }
-  .blue-purple-gradient {
-    @apply bg-gradient-to-r from-cyan-200 to-purple-400
+  .primary-gradient {
+    @apply bg-gradient-to-r from-primary to-accent-1
+  }
+  .button-gradient {
+    @apply bg-gradient-to-r from-frozen-lake-500 to-mauve-magic-400
   }
 	.animation-delay-100 {
     animation-delay: 100ms;
@@ -85,6 +104,71 @@ body {
 }
 
 @theme {
+	--font-body: var(--font-body);
+	--font-title: var(--font-title);
+
+	--color-primary: var(--color-frozen-lake-300);
+	--color-accent-1: var(--color-mauve-magic-300);
+	--color-accent-2: var(--color-tangerine-dream-300);
+	--color-accent-3: var(--color-mint-glow-300);
+	--color-secondary: var(--color-frozen-lake-100);
+	--color-foreground: var(--color-frozen-lake-50);
+	--color-background: #111111;
+	--color-background-2: var(--color-slate-900);
+	--color-background-3: var(--color-slate-500);
+	--color-success: var(--color-green-400);
+	--color-error: var(--color-red-400);
+	--color-warning: var(--color-amber-400);
+	--color-info: var(--color-blue-400);
+
+	--color-frozen-lake-50: #e6f8ff;
+	--color-frozen-lake-100: #cdf0fe;
+	--color-frozen-lake-200: #9be1fd;
+	--color-frozen-lake-300: #68d3fd;
+	--color-frozen-lake-400: #36c4fc;
+	--color-frozen-lake-500: #04b5fb;
+	--color-frozen-lake-600: #0391c9;
+	--color-frozen-lake-700: #026d97;
+	--color-frozen-lake-800: #024864;
+	--color-frozen-lake-900: #012432;
+	--color-frozen-lake-950: #011923;
+
+	--color-mauve-magic-50: #f9e6ff;
+	--color-mauve-magic-100: #f4cdfe;
+	--color-mauve-magic-200: #e89bfd;
+	--color-mauve-magic-300: #dd68fd;
+	--color-mauve-magic-400: #d136fc;
+	--color-mauve-magic-500: #c604fb;
+	--color-mauve-magic-600: #9e03c9;
+	--color-mauve-magic-700: #770297;
+	--color-mauve-magic-800: #4f0264;
+	--color-mauve-magic-900: #280132;
+	--color-mauve-magic-950: #1c0123;
+
+	--color-tangerine-dream-50: #ffede6;
+	--color-tangerine-dream-100: #fedbcd;
+	--color-tangerine-dream-200: #fdb79b;
+	--color-tangerine-dream-300: #fd9268;
+	--color-tangerine-dream-400: #fc6e36;
+	--color-tangerine-dream-500: #fb4a04;
+	--color-tangerine-dream-600: #c93b03;
+	--color-tangerine-dream-700: #972c02;
+	--color-tangerine-dream-800: #641e02;
+	--color-tangerine-dream-900: #320f01;
+	--color-tangerine-dream-950: #230a01;
+
+	--color-mint-glow-50: #ebffe6;
+	--color-mint-glow-100: #d7fecd;
+	--color-mint-glow-200: #b0fd9b;
+	--color-mint-glow-300: #88fd68;
+	--color-mint-glow-400: #61fc36;
+	--color-mint-glow-500: #39fb04;
+	--color-mint-glow-600: #2ec903;
+	--color-mint-glow-700: #229702;
+	--color-mint-glow-800: #176402;
+	--color-mint-glow-900: #0b3201;
+	--color-mint-glow-950: #082301;
+
 	--animate-terminal-popup: terminal-popup 1.2s forwards;
 	@keyframes terminal-popup {
 		0% {

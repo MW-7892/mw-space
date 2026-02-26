@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ParticlesComponent from "./components/common/ParticlesComponent";
 import Terminal from "./components/common/Terminal";
-import { Space_Grotesk } from "next/font/google";
+import { DM_Mono, Space_Grotesk } from "next/font/google";
 import PageLoading from "./components/common/PageLoading";
 import NavBar from "./components/common/NavBar";
 
@@ -11,8 +11,15 @@ export const metadata: Metadata = {
   description: "A personal website of M-W",
 };
 
-const bodyFont = Space_Grotesk({
-  weight: "400",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-title",
+  weight: ["400", "500", "300"],
   subsets: ["latin"],
 });
 
@@ -23,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.className} overflow-hidden`}>
+      <body
+        className={`${spaceGrotesk.variable} ${dmMono.variable} font-body overflow-hidden`}
+      >
         <PageLoading />
         <div className="-z-10 fixed inset-0">
           <ParticlesComponent />

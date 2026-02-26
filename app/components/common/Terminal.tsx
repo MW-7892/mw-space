@@ -7,11 +7,6 @@ import { IoMdClose } from "react-icons/io";
 import { MdMinimize } from "react-icons/md";
 import Image from "next/image";
 
-const spaceMono = Space_Mono({
-  weight: "400",
-  subsets: ["latin"],
-});
-
 export default function Terminal({
   children,
   title,
@@ -23,11 +18,12 @@ export default function Terminal({
 }) {
   return (
     <div
-      className={`backdrop-blur-sm backdrop-brightness-[2.8] ${isFillHeight ? "h-[calc(100vh-theme(space.8))]" : "h-fit pb-10"}
-        border rounded-lg mt-[5%] lg:mt-10 z-[-5] overflow-scroll w-full selection:text-black selection:bg-white`}
+      className={`backdrop-blur-sm backdrop-brightness-200 ${isFillHeight ? "h-[calc(100vh-theme(space.8))]" : "h-fit pb-10"}
+        border border-gray-50 rounded-lg mt-[5%] lg:mt-10 z-[-5] w-full 
+				selection:text-background overflow-y-scroll selection:bg-foreground bg-background-2/30`}
     >
       <div
-        className={`h-8 w-full bg-white flex justify-between text-black px-2 items-center ${spaceMono.className}
+        className={`h-8 w-full bg-gray-50 flex justify-between text-background px-2 items-center
           sticky inset-0 z-20`}
       >
         <div className="flex gap-x-2">

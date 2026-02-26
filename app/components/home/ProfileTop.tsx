@@ -1,10 +1,4 @@
-import { DM_Mono } from "next/font/google";
 import Image from "next/image";
-
-const nameFont = DM_Mono({
-  weight: ["500"],
-  subsets: ["latin"],
-});
 
 export default function ProfileTop() {
   return (
@@ -20,17 +14,17 @@ export default function ProfileTop() {
       </div>
       <div className="grow grid content-start pt-4 text-center">
         <div className="row h-fit flex justify-center">
-          <div
-            className={`text-[64px] sm:text-[84px] ${nameFont.className} align-baseline
-												bg-clip-text text-transparent blue-purple-gradient`}
+          <h1
+            className={`text-[4.3rem] lg:text-[5.15rem] font-title align-baseline
+												bg-clip-text text-transparent primary-gradient`}
           >
             MW-7892
-          </div>
+          </h1>
         </div>
         <div className="grid-cols-1 row pl-2 space-y-6">
-          <div className="row flex justify-center">
+          <p className="row flex justify-center">
             I write code, play rhythm games, and try to learn Japanese.
-          </div>
+          </p>
         </div>
       </div>
     </div>

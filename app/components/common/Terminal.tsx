@@ -18,7 +18,7 @@ export default function Terminal({
 }) {
   return (
     <div
-      className={`backdrop-blur-sm backdrop-brightness-200 ${isFillHeight ? "h-[calc(100vh-theme(space.8))]" : "h-fit pb-10"}
+      className={`backdrop-blur-sm backdrop-brightness-200 ${isFillHeight ? "h-[calc(100vh-theme(space.8))]" : "h-fit"}
         border border-gray-50 rounded-lg mt-[5%] lg:mt-10 z-[-5] w-full 
 				selection:text-background overflow-y-scroll selection:bg-foreground bg-background-2/30`}
     >
@@ -41,7 +41,7 @@ export default function Terminal({
           <IoMdClose />
         </div>
       </div>
-      <div className="pt-10">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

@@ -1,11 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Karla } from "next/font/google";
 import { RiHome2Fill } from "react-icons/ri";
 import { FaCircleInfo, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import Link from "next/link";
+import { IoIosArrowForward } from "react-icons/io";
 
 type Route = {
   icon: string | JSX.Element;
@@ -24,17 +23,17 @@ export default function NavBar() {
   const routes: Route[] = [
     {
       icon: <RiHome2Fill />,
-      text: "Home",
+      text: "home",
       link: "/",
     },
     {
       icon: <FaCircleInfo />,
-      text: "About",
+      text: "about",
       link: "/about",
     },
     {
       icon: <FaPhoneAlt />,
-      text: "Contact",
+      text: "contact",
       link: "/contact",
     },
   ];
@@ -51,19 +50,21 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full py-4">
       {routes.map((route) => (
         <button
           key={route.link}
-          className="nav-button group cursor-pointer"
+          className="nav-button cursor-pointer grid grid-cols-3 items-center px-8
+						group hover:text-primary active:text-primary/50"
           onClick={() => router.push(route.link)}
         >
-          <div className="nav-button-icon group-hover:opacity-100 group-hover:-translate-x-9">
+          <div className="nav-button-icon flex justify-end group-hover:hidden">
             {route.icon}
           </div>
-          <div
-            className={`nav-button-text group-hover:translate-x-[calc(50%-1.25rem)]`}
-          >
+          <div className="nav-button-icon hidden justify-end group-hover:flex">
+            <IoIosArrowForward />
+          </div>
+          <div className="col-span-2 nav-button-text flex justify-start">
             {route.text}
           </div>
         </button>

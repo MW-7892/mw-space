@@ -46,7 +46,7 @@ export default function AboutMe() {
           <div className="button-gradient bg-clip-content w-fit rounded-md">
             <Button
               className="py-2 px-4 tracking-wider uppercase rounded-md group cursor-pointer
-								hover:bg-white duration-300 active:bg-white/60"
+								hover:bg-foreground duration-300 active:bg-white/60"
               as="button"
               onClick={() => router.push("/about")}
             >

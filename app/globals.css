@@ -87,16 +87,14 @@ body {
     @apply bg-slate-100 w-full h-fit
   }
   .nav-button {
-    @apply w-full flex place-content-center p-5 relative text-white
-      active:text-white/50 duration-200
+    @apply w-full flex place-content-center py-4 relative text-foreground
+      active:text-foreground/50
   }
   .nav-button-icon {
-    @apply place-content-center text-xl uppercase
-      opacity-0 ease-in-out pr-4 duration-300 absolute top-1/2 -translate-y-1/2
+    @apply place-content-center text-xl pr-4
   }
   .nav-button-text {
-    @apply text-center text-xl uppercase
-      ease-in-out duration-300
+    @apply text-center text-xl lowercase
   }
   .modal-open {
     @apply overflow-hidden

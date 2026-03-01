@@ -1,10 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { RiHome2Fill } from "react-icons/ri";
 import { FaCircleInfo, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { MouseEvent } from "react";
 
 type Route = {
   icon: string | JSX.Element;
@@ -19,6 +20,7 @@ type Contact = {
 
 export default function NavBar() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const routes: Route[] = [
     {
@@ -49,14 +51,20 @@ export default function NavBar() {
     },
   ];
 
+  const handleClick = (event: MouseEvent, link: string) => {
+    event.stopPropagation();
+    router.push(link);
+  };
+
   return (
-    <div className="flex flex-col w-full py-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 auto-rows-auto py-4">
       {routes.map((route) => (
         <button
           key={route.link}
-          className="nav-button cursor-pointer grid grid-cols-3 items-center px-8
-						group hover:text-primary active:text-primary/50"
-          onClick={() => router.push(route.link)}
+          className={`nav-button cursor-pointer grid grid-cols-3 items-center px-8
+						group hover:text-primary active:text-primary/50 hover:opacity-100 
+						${route.link !== pathname && "opacity-50"}`}
+          onClick={(event) => handleClick(event, route.link)}
         >
           <div className="nav-button-icon flex justify-end group-hover:hidden">
             {route.icon}

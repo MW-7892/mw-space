@@ -17,10 +17,16 @@ const aboutData = [
 export default function AboutMe() {
   const router = useRouter();
   return (
-    <div className="grid-cols-1 bg-background-3/20 pb-12 space-y-8 border border-transparent border-y-secondary border-dashed py-8">
+    <div
+      className="grid-cols-1 bg-background-3/20 pb-12 space-y-8 border
+				border-transparent border-y-foreground border-dashed py-8"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-5 px-10 space-x-10">
         <div className="col col-span-2">
-          <div className="w-full h-full justify-center content-center p-4 hidden lg:flex opacity-95 mix-blend-overlay">
+          <div
+            className="w-full h-full justify-center content-center p-4
+						hidden lg:flex opacity-95 mix-blend-overlay"
+          >
             <Image
               src="kaomoji.svg"
               width="256"
@@ -30,13 +36,16 @@ export default function AboutMe() {
           </div>
         </div>
         <div className="col col-span-3">
-          <h2 className={`font-title mb-6`}>About Me</h2>
+          <h2 className="font-title mb-6 text-primary">About Me</h2>
           <div className="mb-10">
             <ul className="space-y-4">
               {aboutData.map((data) => (
                 <li key={data} className="flex gap-x-2">
                   <span>
-                    <MdKeyboardArrowRight size="24" className="text-primary" />
+                    <MdKeyboardArrowRight
+                      size="24"
+                      className="text-secondary"
+                    />
                   </span>
                   <span>{data}</span>
                 </li>

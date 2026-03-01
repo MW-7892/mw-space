@@ -2,8 +2,8 @@ import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
 
 export const work: AboutData[] = [
   {
-    suptitle: "Sep 2023 - Present",
-    title: "Full-stack Developer Internship",
+    suptitle: "Sep 2023 - Feb 2026",
+    title: "Full-Stack Developer Internship",
     subtitle: {
       name: "@ Visual Alpha",
       link: "https://visual-alpha.com/en/index/",
@@ -17,13 +17,5 @@ export const work: AboutData[] = [
 ];
 
 export default function AboutWork() {
-  return (
-    <SectionTemplate
-      id="work"
-      title="Work"
-      borderColor="border-purple-300"
-      textColor="text-purple-300"
-      data={work}
-    />
-  );
+  return <SectionTemplate id="work" title="Work" data={work} />;
 }

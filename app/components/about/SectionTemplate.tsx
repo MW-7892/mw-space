@@ -1,11 +1,12 @@
-import { Inter } from "next/font/google";
-import SectionContainer from "./SectionContainer";
-import Link from "next/link";
+"use client";
 
-const inter = Inter({
-  weight: ["300"],
-  subsets: ["latin"],
-});
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
 
 export interface AboutData {
   suptitle?: string;
@@ -16,9 +17,7 @@ export interface AboutData {
 
 const ListItems = ({ data }: { data: string[] }) => {
   return (
-    <ul
-      className={`list-disc text-slate-300 ml-4 space-y-1 ${inter.className} mt-2`}
-    >
+    <ul className="list-disc ml-4 space-y-1 mt-2">
       {data.map((item) => (
         <li key={item}>{item}</li>
       ))}
@@ -28,60 +27,73 @@ const ListItems = ({ data }: { data: string[] }) => {
 
 export default function SectionTemplate({
   id,
-  borderColor,
-  textColor,
   title,
   data,
 }: {
   id?: string;
-  borderColor: string;
-  textColor: string;
   title: string;
   data: AboutData[];
 }) {
   return (
-    <SectionContainer borderColor={borderColor}>
-      <>
-        <div className={`w-fit mb-5 ${textColor}`}>
-          <h2 className="text-2xl mb-2">{title}</h2>
-        </div>
-        <div className="grid grid-cols-1 gap-y-5">
-          {data.map((item) => (
-            <div key={item.title}>
-              {item.title && (
-                <>
-                  <p className={`text-sm italic text-slate-300 mb-1`}>
-                    {item.suptitle}
-                  </p>
-                  <h3 id={id} className="text-lg font-bold text-slate-200 mb-1">
-                    {item.title}
-                    <span
-                      className={`ml-2 text-sm normal-case font-thin ${textColor} align-middle`}
-                    >
-                      {item.subtitle?.link !== undefined ? (
-                        <Link href={item.subtitle.link}>
-                          {item.subtitle.name}
-                        </Link>
-                      ) : (
-                        item.subtitle?.name
-                      )}
-                    </span>
-                  </h3>
-                </>
-              )}
-              {Array.isArray(item.description) ? (
-                <ListItems data={item.description} />
-              ) : (
-                <p
-                  className={`${inter.className} ${item.title ? "text-slate-300 text-[16px] font-light" : "text-slate-200"}`}
+    <>
+      <div className="w-fit mb-5">
+        <h4 className="text-primary">{title}</h4>
+      </div>
+      <div className="grid grid-cols-1 gap-y-5">
+        {data.map((item) => (
+          <Disclosure key={item.title}>
+            {({ open }) => (
+              <div
+                className={`group border-4 border-transparent
+									${open ? "border-l-foreground" : "border-l-foreground/30"} pl-4`}
+              >
+                {item.title && (
+                  <DisclosureButton
+                    className="text-left hover:cursor-pointer hover:opacity-80 
+											w-full flex justify-between"
+                  >
+                    <div className="w-4/5">
+                      <p className="font-bold text-secondary mb-1">
+                        {item.suptitle}
+                      </p>
+                      <h6 id={id} className="line-height-xl">
+                        {item.title}
+                      </h6>
+                      <p
+                        className="font-title w-fit font-normal opacity-65
+													mix-blend-screen hover:underline underline-offset-4"
+                      >
+                        {item.subtitle?.link !== undefined ? (
+                          <Link href={item.subtitle.link}>
+                            {item.subtitle.name}
+                          </Link>
+                        ) : (
+                          item.subtitle?.name
+                        )}
+                      </p>
+                    </div>
+                    <IoIosArrowDown
+                      className="group-data-open:rotate-180 ml-2"
+                      size="24"
+                    />
+                  </DisclosureButton>
+                )}
+                <DisclosurePanel
+                  transition
+                  className="opacity-80 mt-4 duration-200 ease-out 
+										data-closed:-translate-y-6 data-closed:opacity-0"
                 >
-                  {item.description}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-      </>
-    </SectionContainer>
+                  {Array.isArray(item.description) ? (
+                    <ListItems data={item.description} />
+                  ) : (
+                    <p>{item.description}</p>
+                  )}
+                </DisclosurePanel>
+              </div>
+            )}
+          </Disclosure>
+        ))}
+      </div>
+    </>
   );
 }

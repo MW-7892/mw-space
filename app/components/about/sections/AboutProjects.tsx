@@ -2,13 +2,17 @@ import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
 
 export const projects: AboutData[] = [
   {
-    title: "Mini Grader",
+    suptitle: "Jan 2025 - Jan 2026",
+    title: "Small-Scale WRF for Educational Purposes",
     subtitle: {
-      name: "GitHub (work in progress)",
-      link: "https://github.com/MW-7892/mini-grader-deploy",
+      name: "GitHub",
+      link: "https://github.com/TokyoTechGUC/miniguc",
     },
-    description:
-      "A full-stack web app for creating quick programming problems. Mainly to practice Next.js, Golang, DevOps, and AWS deployment",
+    description: [
+      "Developed a weather prediction model for sandbox environment",
+      "Optimized the simulation performance from taking days to just an hour",
+      "Presented in The Meteorological Society of Japan 2025 Autumn Meeting",
+    ],
   },
   {
     title: "M-W space",
@@ -19,13 +23,5 @@ export const projects: AboutData[] = [
 ];
 
 export default function AboutProjects() {
-  return (
-    <SectionTemplate
-      id="project"
-      title="Projects"
-      borderColor="border-teal-300"
-      textColor="text-teal-300"
-      data={projects}
-    />
-  );
+  return <SectionTemplate id="project" title="Projects" data={projects} />;
 }

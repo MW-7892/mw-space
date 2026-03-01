@@ -5,6 +5,7 @@ import Terminal from "./components/common/Terminal";
 import { DM_Mono, Space_Grotesk } from "next/font/google";
 import PageLoading from "./components/common/PageLoading";
 import NavBar from "./components/common/NavBar";
+import MobileNav from "./components/common/MobileNav";
 
 export const metadata: Metadata = {
   title: "M-W Space",
@@ -37,14 +38,15 @@ export default function RootLayout({
         <div className="-z-10 fixed inset-0">
           <ParticlesComponent />
         </div>
-        <div className="flex justify-center gap-x-8">
-          <div className="hidden xl:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 opacity-0">
+        <div className="flex flex-col lg:flex-row justify-center gap-x-8 px-4">
+          <MobileNav />
+          <div className="hidden lg:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 opacity-0">
             <Terminal title="navbar">
               <NavBar />
             </Terminal>
           </div>
           <div
-            className="animate-terminal-popup w-[90%] h-full max-w-[720px] flex justify-center
+            className="animate-terminal-popup h-full w-full lg:max-w-[720px] flex justify-center
 							animation-delay-1200 ease-out opacity-0"
           >
             <Terminal isFillHeight title="mw-7892">

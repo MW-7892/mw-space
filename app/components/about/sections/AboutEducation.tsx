@@ -8,7 +8,7 @@ export const education: AboutData[] = [
       name: "@ Institute of Science Tokyo",
       link: "https://www.isct.ac.jp/en",
     },
-    description: "GPA 3.95/4.50",
+    description: "GPA 3.97/4.50",
   },
   {
     suptitle: "May 2019 - Mar 2022",
@@ -22,13 +22,5 @@ export const education: AboutData[] = [
 ];
 
 export default function AboutEducation() {
-  return (
-    <SectionTemplate
-      id="education"
-      title="Education"
-      borderColor="border-amber-200"
-      textColor="text-amber-200"
-      data={education}
-    />
-  );
+  return <SectionTemplate id="education" title="Education" data={education} />;
 }

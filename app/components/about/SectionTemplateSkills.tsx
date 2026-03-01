@@ -41,35 +41,33 @@ export default function SectionTemplateSkills({
   data: AboutDataSkill[];
 }) {
   return (
-    <SectionContainer borderColor="border-orange-300">
-      <>
-        <div id="skill" className="w-fit mb-5 text-orange-300">
-          <h2 className="text-2xl mb-2">{"Skills & Interests"}</h2>
-          <span className="flex space-x-3">
-            <div className="flex items-center space-x-2 text-white">
-              <div
-                className="rounded-full bg-gradient-to-r from-amber-400
-                           to-orange-400 w-5 h-5"
-              />
-              <span>Skills</span>
-            </div>
-            <div className="flex items-center space-x-2 text-white">
-              <div className="rounded-full bg-transparent border border-amber-400 w-5 h-5" />
-              <span>Interests</span>
-            </div>
-          </span>
-        </div>
-        <div className="grid grid-cols-1 gap-y-5">
-          {data.map((item) => (
-            <div key={item.title}>
-              <h3 className="text-lg font-bold text-slate-200 mb-1">
-                {item.title}
-              </h3>
-              <ChipItems skills={item.skills} />
-            </div>
-          ))}
-        </div>
-      </>
-    </SectionContainer>
+    <>
+      <div id="skill" className="w-fit mb-5 text-orange-300">
+        <h2 className="text-2xl mb-2">{"Skills & Interests"}</h2>
+        <span className="flex space-x-3">
+          <div className="flex items-center space-x-2 text-white">
+            <div
+              className="rounded-full bg-gradient-to-r from-amber-400
+												 to-orange-400 w-5 h-5"
+            />
+            <span>Skills</span>
+          </div>
+          <div className="flex items-center space-x-2 text-white">
+            <div className="rounded-full bg-transparent border border-amber-400 w-5 h-5" />
+            <span>Interests</span>
+          </div>
+        </span>
+      </div>
+      <div className="grid grid-cols-1 gap-y-5">
+        {data.map((item) => (
+          <div key={item.title}>
+            <h3 className="text-lg font-bold text-slate-200 mb-1">
+              {item.title}
+            </h3>
+            <ChipItems skills={item.skills} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

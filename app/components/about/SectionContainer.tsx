@@ -7,17 +7,11 @@ const poppins = Poppins({
 
 export default function SectionContainer({
   children,
-  borderColor,
 }: {
   children: React.JSX.Element | string;
-  borderColor: string;
 }) {
   return (
-    <div
-      className={`border-l-[8px] ${borderColor} pl-3 max-w-[1000px]
-        ${poppins.className}
-        bg-gradient-to-r from-black/40 to-transparent`}
-    >
+    <div className="border border-transparent border-l-foreground">
       {children}
     </div>
   );

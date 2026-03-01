@@ -22,9 +22,9 @@ export default function ProfileTop() {
           </h1>
         </div>
         <div className="grid-cols-1 row pl-2 space-y-6">
-          <p className="row flex justify-center">
+          <h6 className="row flex font-body font-normal justify-center">
             I write code, play rhythm games, and try to learn Japanese.
-          </p>
+          </h6>
         </div>
       </div>
     </div>

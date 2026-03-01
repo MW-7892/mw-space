@@ -22,16 +22,23 @@ body {
 	}
 	h6 {
 		font-size: var(--h6);
+		font-weight: 500;
+		font-family: var(--font-title);
 	}
 	h5 {
 		font-size: var(--h5);
+		font-weight: 500;
+		font-family: var(--font-title);
 	}
 	h4 {
 		font-size: var(--h4);
+		font-weight: 500;
+		font-family: var(--font-title);
 	}
 	h3 {
 		font-size: var(--h3);
 		font-weight: 500;
+		font-family: var(--font-title);
 	}
 	h2 {
 		font-size: var(--h2);
@@ -74,6 +81,15 @@ body {
   .animation-delay-1800 {
     animation-delay: 1.8s;
   }
+	.line-height-md {
+		line-height: 1.5rem;
+	}
+	.line-height-lg {
+		line-height: 1.75rem;
+	}
+	.line-height-xl {
+		line-height: 2rem;
+	}
 }
 
 @layer components {
@@ -99,6 +115,9 @@ body {
   .modal-open {
     @apply overflow-hidden
   }
+	.tooltip {
+		@apply bg-foreground rounded-xl text-background px-2 text-xs
+	}
 }
 
 @theme {
@@ -109,7 +128,7 @@ body {
 	--color-accent-1: var(--color-mauve-magic-300);
 	--color-accent-2: var(--color-tangerine-dream-300);
 	--color-accent-3: var(--color-mint-glow-300);
-	--color-secondary: var(--color-frozen-lake-100);
+	--color-secondary: var(--color-mauve-magic-200);
 	--color-foreground: var(--color-frozen-lake-50);
 	--color-background: #111111;
 	--color-background-2: var(--color-slate-900);

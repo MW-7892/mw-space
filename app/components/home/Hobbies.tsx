@@ -42,15 +42,15 @@ export default function Hobbies() {
   return (
     <div className="space-y-8 pb-12">
       <div className="flex justify-center">
-        <h2>Hobbies</h2>
+        <h2 className="text-primary">Hobbies</h2>
       </div>
       <div className="grid grid-cols-3 px-8 gap-x-4 justify-items-center text-center">
         {hobbyData.map((data) => (
           <div key={data.name} className="px-4">
-            <div className="text-[48pt] flex justify-center mb-4 text-secondary">
+            <div className="text-[48pt] flex justify-center mb-4 opacity-80 mix-blend-overlay">
               {data.icon}
             </div>
-            <h5 className="font-medium text-primary">{data.name}</h5>
+            <h5 className="font-medium text-secondary">{data.name}</h5>
             <p>{data.description}</p>
           </div>
         ))}

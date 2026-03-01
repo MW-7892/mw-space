@@ -1,23 +1,17 @@
-import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
-
-const summary: AboutData[] = [
-  {
-    description: `
-      A Passionate engineering student with a strong background on programming
-      and graphic design. Currently interested in trying out new things in information
-      engineering field in order to to broaden my knowledge and improve people's quality of life.
-    `,
-  },
-];
-
 export default function AboutSummary() {
   return (
-    <SectionTemplate
-      id="summary"
-      title="Summary"
-      borderColor="border-blue-300"
-      textColor="text-blue-300"
-      data={summary}
-    />
+    <>
+      <div className="w-fit mb-5">
+        <h4 className="text-primary">Summary</h4>
+      </div>
+      <div
+        className="opacity-80 w-4/5 mt-4 duration-200 ease-out 
+					data-closed:-translate-y-6 data-closed:opacity-0"
+      >
+        A full-stack software engineer who is also interested in graphic design.
+        Currently spending my free time developing things to learn more about
+        IT-related things.
+      </div>
+    </>
   );
 }

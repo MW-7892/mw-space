@@ -22,5 +22,5 @@ export const education: AboutData[] = [
 ];
 
 export default function AboutEducation() {
-  return <SectionTemplate id="education" title="Education" data={education} />;
+  return <SectionTemplate title="Education" data={education} />;
 }

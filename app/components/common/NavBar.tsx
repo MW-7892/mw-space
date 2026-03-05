@@ -18,7 +18,11 @@ type Contact = {
   link: string;
 };
 
-export default function NavBar() {
+export default function NavBar({
+  onRouteChange,
+}: {
+  onRouteChange?: () => void;
+}) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -53,6 +57,7 @@ export default function NavBar() {
 
   const handleClick = (event: MouseEvent, link: string) => {
     event.stopPropagation();
+    onRouteChange && onRouteChange();
     router.push(link);
   };
 

@@ -22,7 +22,7 @@ export default function MobileNav() {
       <Transition show={isNavOpen}>
         <div className="transition data-[closed]:scale-0 duration-300 ease-in-out">
           <Terminal title="navbar">
-            <NavBar />
+            <NavBar onRouteChange={() => setIsNavOpen(false)} />
           </Terminal>
         </div>
       </Transition>

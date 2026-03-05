@@ -8,8 +8,9 @@ export const work: AboutData[] = [
       name: "@ Visual Alpha",
       link: "https://visual-alpha.com/en/index/",
     },
+    preview: "Developed a FinTech SaaS platform using React.js and Laravel",
     description: [
-      "Develop a full-stack financial monitoring platform using React.js, GraphQL, and Laravel",
+      "Developed a full-stack financial monitoring platform using React.js, GraphQL, and Laravel",
       "Learned version control system and CI/CD process in web development",
       "Gained experience in communication skills within the dev team and with client support",
     ],
@@ -17,5 +18,5 @@ export const work: AboutData[] = [
 ];
 
 export default function AboutWork() {
-  return <SectionTemplate id="work" title="Work" data={work} />;
+  return <SectionTemplate title="Work" data={work} />;
 }

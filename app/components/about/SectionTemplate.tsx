@@ -108,6 +108,7 @@ export default function SectionTemplate({
         {data.map((item) => {
           return item.preview ? (
             <ExpandableContent
+              key={item.title}
               title={item.title}
               suptitle={item.suptitle}
               subtitle={item.subtitle}
@@ -120,7 +121,11 @@ export default function SectionTemplate({
               )}
             </ExpandableContent>
           ) : (
-            <div className="group border-4 border-transparent pl-4 border-l-foreground/30 hover:border-l-foreground/60">
+            <div
+              key={item.title}
+              className="group border-4 border-transparent pl-4
+								border-l-foreground/30 hover:border-l-foreground/60"
+            >
               <div
                 className="text-left group-hover:cursor-default w-full flex justify-between
 									opacity-85 group-hover:opacity-100"
@@ -131,7 +136,7 @@ export default function SectionTemplate({
                   </p>
                   <h6 className="line-height-xl">{item.title}</h6>
                   <p
-                    className="font-title w-fit font-normal opacity-65
+                    className="font-title w-fit font-normal opacity-70
 										mix-blend-screen hover:underline underline-offset-4"
                   >
                     {item.subtitle?.link !== undefined ? (

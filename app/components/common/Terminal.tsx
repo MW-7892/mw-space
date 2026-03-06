@@ -16,10 +16,12 @@ export default function Terminal({
   title: string;
   isFillHeight?: boolean;
 }) {
+  const screenFillHeight =
+    "h-[calc(100vh-theme(space.20))] lg:h-[calc(100vh-theme(space.10))]";
   return (
     <div
       className={`backdrop-blur-sm backdrop-brightness-200 border border-gray-50 lg:mt-10 z-[-5]
-				w-full ${isFillHeight ? "h-[calc(100vh-theme(space.8))] rounded-t-lg border-b-transparent" : "h-fit rounded-lg"}
+				w-full ${isFillHeight ? screenFillHeight + " rounded-t-lg border-b-transparent" : "h-fit rounded-lg"}
 				selection:text-background overflow-y-scroll selection:bg-foreground bg-background-2/30`}
     >
       <div

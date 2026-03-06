@@ -31,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${spaceGrotesk.variable} ${dmMono.variable} font-body overflow-y-hidden`}
-      >
+      <body className={`${spaceGrotesk.variable} ${dmMono.variable} font-body`}>
         <PageLoading />
         <div className="-z-10 fixed inset-0">
           <ParticlesComponent />

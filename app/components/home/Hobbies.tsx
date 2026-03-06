@@ -44,7 +44,7 @@ export default function Hobbies() {
       <div className="flex justify-center">
         <h2 className="text-primary">Hobbies</h2>
       </div>
-      <div className="grid grid-cols-3 px-8 gap-x-4 justify-items-center text-center">
+      <div className="grid lg:grid-cols-3 px-8 gap-x-4 gap-y-10 justify-items-center text-center">
         {hobbyData.map((data) => (
           <div key={data.name} className="px-4">
             <div className="text-[48pt] flex justify-center mb-4 opacity-80 mix-blend-overlay">

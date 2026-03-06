@@ -32,13 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${dmMono.variable} font-body overflow-hidden`}
+        className={`${spaceGrotesk.variable} ${dmMono.variable} font-body overflow-y-hidden`}
       >
         <PageLoading />
         <div className="-z-10 fixed inset-0">
           <ParticlesComponent />
         </div>
-        <div className="flex flex-col lg:flex-row justify-center gap-x-8 px-4">
+        <div className="flex flex-col absolute inset-0 lg:flex-row justify-center gap-x-8 px-4 h-fit">
           <MobileNav />
           <div className="hidden lg:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 opacity-0">
             <Terminal title="navbar">

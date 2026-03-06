@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { RiHome2Fill } from "react-icons/ri";
-import { FaCircleInfo, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaCircleInfo } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { MouseEvent } from "react";
@@ -10,11 +10,6 @@ import { MouseEvent } from "react";
 type Route = {
   icon: string | JSX.Element;
   text: string;
-  link: string;
-};
-
-type Contact = {
-  icon: string | JSX.Element;
   link: string;
 };
 
@@ -41,17 +36,6 @@ export default function NavBar({
       icon: <FaPhoneAlt />,
       text: "contact",
       link: "/contact",
-    },
-  ];
-
-  const contacts: Contact[] = [
-    {
-      icon: <FaLinkedinIn />,
-      link: "https://www.linkedin.com/in/mok-wattanasopon/",
-    },
-    {
-      icon: <FaGithub />,
-      link: "https://github.com/MW-7892",
     },
   ];
 

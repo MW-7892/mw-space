@@ -13,8 +13,8 @@ export default function SkillGrid({ skill }: { skill: AboutDataSkill }) {
         {skill.skills.slice(0, isExpanded ? undefined : 4).map((item) => (
           <div
             key={item.name}
-            className="flex rounded-lg bg-foreground/30 px-4 py-3 gap-y-4
-						hover:bg-foreground/40 bg-blend-overlay cursor-default flex-col"
+            className="flex rounded-lg bg-foreground/20 px-4 py-3 gap-y-4
+						hover:bg-foreground/30 bg-blend-overlay cursor-default flex-col"
           >
             <div className="text-2xl pt-1 text-accent-2 mix-blend-overlay">
               {item.icon}

@@ -46,7 +46,7 @@ export default function RootLayout({
             </Terminal>
           </div>
           <div
-            className="animate-terminal-popup h-full w-full lg:max-w-[720px] flex justify-center
+            className="animate-terminal-popup h-fit w-full lg:max-w-[720px] flex justify-center
 							animation-delay-1200 ease-out opacity-0"
           >
             <Terminal isFillHeight title="mw-7892">

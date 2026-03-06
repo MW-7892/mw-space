@@ -8,7 +8,7 @@ This will be developed with Next.js on my free time. The website itself is quite
 
 ## 🎯 Purposes
 * Experiment with my website designing skills.
-* Include this webshite in my CV to show that I can make a website.
+* Include this website in my CV to show that I can make a website.
 * Learn how Next.js works.
 
 ## 🤔 Design Considerations

@@ -6,6 +6,11 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "rimg.bookwalker.jp",
 				pathname: "/**"
+			},
+			{
+				protocol: "https",
+				hostname: "mangadex.org",
+				pathname: "/**"
 			}
 		]
 	}

@@ -117,14 +117,16 @@ export default function ReadingListTable({
           <Link
             key={entry.name}
             target="_blank"
-            href={entry.url}
-            className="rounded-xl overflow-hidden border-w-2 border-white hover:bg-background-3/30
-							duration-100 cursor-pointer p-4"
+            href={entry.url ?? "/"}
+            aria-disabled={!entry.url}
+            className={`rounded-xl overflow-hidden border-w-2 border-white hover:bg-background-3/30
+							duration-100 cursor-pointer p-4 flex flex-col ${!entry.url && "pointer-events-none"}`}
           >
-            <div className="w-full mb-4">
+            <div className="w-full relative mb-4">
               <Image
                 src={entry.coverImageUrl ?? "/image-placeholder.png"}
-                className={`rounded-lg w-full ${!entry.coverImageUrl && "border border-white"}`}
+                className={`rounded-lg w-full ${!entry.coverImageUrl && "border border-white"}
+									object-cover sm:h-80 md:h-72 lg:h-64`}
                 width={100}
                 height={200}
                 alt={entry.name}

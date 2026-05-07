@@ -43,7 +43,7 @@ export default function ReadingListEntryStats({
   const getRankTextColor = (rank: ReadingRank) => {
     switch (rank) {
       case ReadingRank.Outstanding:
-        return "text-amber-300";
+        return "text-yellow-300";
       case ReadingRank.VeryGood:
         return "text-purple-300";
       case ReadingRank.Good:

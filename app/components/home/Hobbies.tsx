@@ -1,13 +1,7 @@
-import { Noto_Sans_Thai } from "next/font/google";
 import Link from "next/link";
 import { IoIosUmbrella } from "react-icons/io";
 import { IoGameController } from "react-icons/io5";
-import { PiBowlFoodFill } from "react-icons/pi";
-
-const notoSansThai = Noto_Sans_Thai({
-  weight: ["400"],
-  subsets: ["thai"],
-});
+import { MdBook } from "react-icons/md";
 
 const hobbyData = [
   {
@@ -21,18 +15,14 @@ const hobbyData = [
     description: "Around 15500 rating",
   },
   {
-    icon: <PiBowlFoodFill />,
-    name: "cooking",
+    icon: <MdBook />,
+    name: "Reading",
     description: (
       <>
-        Only{" "}
-        <Link
-          href="https://en.wikipedia.org/wiki/Phat_kaphrao"
-          className={`${notoSansThai.className} underline`}
-        >
-          กะเพราหมูกรอบ
+        Yep, I have a{" "}
+        <Link href="/reading-list" className={`underline`}>
+          reading list
         </Link>
-        though
       </>
     ),
   },

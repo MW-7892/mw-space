@@ -104,7 +104,7 @@ export default function ReadingListTable({
               key={rank}
               className={`rounded-full ${getRankBorderColor(rank)} border px-2 text-black
 								${includedRanks.has(rank) ? getRankBackgroundColor(rank) + " border-0" : "bg-transparent text-white"}
-								cursor-pointer hover:opacity-90 text-center`}
+								cursor-pointer hover:opacity-90 text-center text-sm items-center flex justify-center`}
               onClick={() => handleClickRankFilter(rank)}
             >
               {rank}

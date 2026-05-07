@@ -1,4 +1,4 @@
-import { ReadingRank } from "@/reading-list/page";
+import { ReadingRank } from "@/constants/enums";
 import { getRankBackgroundColor } from "./ReadingListTable";
 
 export default function ReadingListEntryStats({

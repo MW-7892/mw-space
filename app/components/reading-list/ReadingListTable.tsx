@@ -1,6 +1,6 @@
 "use client";
 
-import { ReadingEntry, ReadingRank } from "@/reading-list/page";
+import { ReadingEntry } from "@/reading-list/page";
 import { Noto_Sans_JP } from "next/font/google";
 import Image from "next/image";
 import { useMemo, useState } from "react";
@@ -8,6 +8,7 @@ import ReadingListEntryStats from "./ReadingListEntryStats";
 import { Tooltip } from "@nextui-org/tooltip";
 import { FaCircleQuestion } from "react-icons/fa6";
 import URLWrapper from "../common/URLWrapper";
+import { ReadingRank } from "@/constants/enums";
 
 const titleFont = Noto_Sans_JP({
   weight: ["300", "400", "500", "600", "700"],

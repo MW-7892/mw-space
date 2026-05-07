@@ -1,11 +1,5 @@
 import ReadingListTable from "@/components/reading-list/ReadingListTable";
-
-export enum ReadingRank {
-  Outstanding = "Outstanding",
-  VeryGood = "Very Good",
-  Good = "Good",
-  Okay = "Okay",
-}
+import { ReadingRank } from "@/constants/enums";
 
 export interface ReadingEntry {
   name: string;

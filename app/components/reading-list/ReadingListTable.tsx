@@ -3,11 +3,11 @@
 import { ReadingEntry, ReadingRank } from "@/reading-list/page";
 import { Noto_Sans_JP } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import ReadingListEntryStats from "./ReadingListEntryStats";
 import { Tooltip } from "@nextui-org/tooltip";
 import { FaCircleQuestion } from "react-icons/fa6";
+import URLWrapper from "../common/URLWrapper";
 
 const titleFont = Noto_Sans_JP({
   weight: ["300", "400", "500", "600", "700"],
@@ -114,13 +114,12 @@ export default function ReadingListTable({
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4">
         {filteredReadingList.map((entry) => (
-          <Link
+          <URLWrapper
             key={entry.name}
-            target="_blank"
-            href={entry.url ?? "/"}
-            aria-disabled={!entry.url}
+            isNewTab
+            href={entry.url}
             className={`rounded-xl overflow-hidden border-w-2 border-white hover:bg-background-3/30
-							duration-100 cursor-pointer p-4 flex flex-col ${!entry.url && "pointer-events-none"}`}
+							duration-100 ${entry.url ? "cursor-pointer" : "cursor-default"} p-4 flex flex-col`}
           >
             <div className="w-full relative mb-4">
               <Image
@@ -133,11 +132,21 @@ export default function ReadingListTable({
               />
             </div>
             <div>
-              <div className={`${titleFont.className} font-black text-md`}>
-                {entry.name}
-              </div>
-              <div className={`${titleFont.className} font-light text-sm`}>
-                {entry.author}
+              <div className="min-h-16">
+                <Tooltip
+                  content={entry.name}
+                  placement="top"
+                  className="bg-foreground text-background rounded-lg px-4 py-2"
+                >
+                  <div
+                    className={`${titleFont.className} font-black text-md line-clamp-2`}
+                  >
+                    {entry.name}
+                  </div>
+                </Tooltip>
+                <div className={`${titleFont.className} font-light text-sm`}>
+                  {entry.author}
+                </div>
               </div>
               <ReadingListEntryStats
                 rank={entry.rank}
@@ -145,7 +154,7 @@ export default function ReadingListTable({
                 artRank={entry.artRank}
               />
             </div>
-          </Link>
+          </URLWrapper>
         ))}
       </div>
     </div>

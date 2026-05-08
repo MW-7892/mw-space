@@ -13,13 +13,13 @@ export default function ReadingListEntryStats({
   const getRankBarLength = (rank: ReadingRank): number => {
     switch (rank) {
       case ReadingRank.Outstanding:
-        return 3;
+        return 5;
       case ReadingRank.VeryGood:
-        return 3;
+        return 4;
       case ReadingRank.Good:
-        return 2;
+        return 3;
       case ReadingRank.Okay:
-        return 1;
+        return 2;
       default:
         return 0;
     }
@@ -78,7 +78,7 @@ export default function ReadingListEntryStats({
               className={`stroke-current text-primary ${getRankTextColor(rank)}`}
               strokeWidth="3"
               strokeDasharray="100"
-              strokeDashoffset={100 - (getRankBarLength(rank) * 100) / 3 + 13}
+              strokeDashoffset={100 - (getRankBarLength(rank) * 100) / 5 + 13}
               strokeLinecap="round"
             ></circle>
           </svg>
@@ -95,7 +95,7 @@ export default function ReadingListEntryStats({
           <div className="flex w-full h-2 gap-x-2">
             <div
               className={`h-full w-1/4 rounded-full ${getRankBackgroundColor(storyRank)}`}
-              style={{ width: (getRankBarLength(storyRank) * 100) / 3 + "%" }}
+              style={{ width: (getRankBarLength(storyRank) * 100) / 5 + "%" }}
             />
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function ReadingListEntryStats({
           <div className="flex w-full h-2 gap-x-2">
             <div
               className={`h-full w-1/4 rounded-full ${getRankBackgroundColor(artRank)}`}
-              style={{ width: (getRankBarLength(artRank) * 100) / 3 + "%" }}
+              style={{ width: (getRankBarLength(artRank) * 100) / 5 + "%" }}
             />
           </div>
         </div>

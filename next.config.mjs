@@ -11,6 +11,11 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "mangadex.org",
 				pathname: "/**"
+			},
+			{
+				protocol: "https",
+				hostname: "i.pximg.net",
+				pathname: "/**"
 			}
 		]
 	}

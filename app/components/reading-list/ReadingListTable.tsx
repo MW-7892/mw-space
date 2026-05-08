@@ -39,9 +39,12 @@ export default function ReadingListTable({
     new Set(Object.values(ReadingRank)),
   );
 
+  // Recently added entries will show up first
+  const reversedReadingList = readingList.reverse();
+
   const filteredReadingList = useMemo(() => {
-    return readingList.filter((entry) => includedRanks.has(entry.rank));
-  }, [readingList, includedRanks]);
+    return reversedReadingList.filter((entry) => includedRanks.has(entry.rank));
+  }, [reversedReadingList, includedRanks]);
 
   const getRankBorderColor = (rank: ReadingRank) => {
     switch (rank) {

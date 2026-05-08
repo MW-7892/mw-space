@@ -86,8 +86,8 @@ export default function ReadingListTable({
 
   return (
     <div>
-      <div className="flex justify-end mb-4 px-4">
-        <div className="flex gap-x-2 items-center">
+      <div className="grid grid-cols-3 gap-y-2 sm:grid-cols-4 justify-end mb-4 px-4">
+        <div className="flex gap-x-2 sm:justify-end items-center">
           <Tooltip
             content={rankExplanationText}
             placement="top"
@@ -99,7 +99,7 @@ export default function ReadingListTable({
           </Tooltip>
           <span className="mr-4">Filter: </span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-2">
+        <div className="col-span-3 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-2">
           {Object.values(ReadingRank).map((rank) => (
             <div
               key={rank}
@@ -113,7 +113,7 @@ export default function ReadingListTable({
           ))}
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-2 sm:gap-x-4 gap-y-4">
         {filteredReadingList.map((entry) => (
           <URLWrapper
             key={entry.name}
@@ -126,14 +126,14 @@ export default function ReadingListTable({
               <Image
                 src={entry.coverImageUrl ?? "/image-placeholder.png"}
                 className={`rounded-lg w-full ${!entry.coverImageUrl && "border border-white"}
-									object-cover sm:h-80 md:h-72 lg:h-64`}
+									object-cover h-44 sm:h-56 md:h-72 lg:h-64`}
                 width={100}
                 height={200}
                 alt={entry.name}
               />
             </div>
             <div>
-              <div className="min-h-16">
+              <div className="min-h-18">
                 <Tooltip
                   content={entry.name}
                   placement="top"

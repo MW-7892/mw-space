@@ -54,9 +54,9 @@ export default function ReadingListEntryStats({
   };
 
   return (
-    <div className="mt-2 flex gap-x-4">
+    <div className="flex gap-x-4">
       <div className="my-auto flex items-center">
-        <div className="relative size-14 mt-4">
+        <div className="relative size-10 md:size-14 mt-4">
           <svg
             className="size-full -rotate-90"
             viewBox="0 0 36 36"
@@ -83,7 +83,7 @@ export default function ReadingListEntryStats({
             ></circle>
           </svg>
           <div className="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
-            <span className="text-center text-xl font-bold text-white">
+            <span className="text-center md:text-xl font-bold text-white">
               {getRankChar(rank)}
             </span>
           </div>

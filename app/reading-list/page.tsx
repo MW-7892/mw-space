@@ -42,13 +42,16 @@ const fetchReadingList = async () => {
 
 export default async function ReadingListPage() {
   const readingList = await fetchReadingList();
+  const readingListLength = readingList.length;
 
   return (
     <div className="p-8">
       <div className="px-2 mb-8">
         <h1>Reading List</h1>
         <h6 className="opacity-80">
-          Subjective opinion. Covers are only for reference purpose.
+          Subjective opinion of{" "}
+          <span className="text-primary">{readingListLength} books</span>.
+          Covers are only for reference purpose.
         </h6>
       </div>
       <ReadingListTable readingList={readingList} />

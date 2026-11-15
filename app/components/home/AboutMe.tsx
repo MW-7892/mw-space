@@ -25,12 +25,13 @@ export default function AboutMe() {
         <div className="col col-span-2">
           <div
             className="w-full h-full justify-center content-center p-4
-						hidden lg:flex opacity-95 mix-blend-overlay"
+						hidden lg:flex opacity-90 mix-blend-overlay"
           >
             <Image
-              src="kaomoji.svg"
+              src="cat-face.svg"
               width="256"
               height="256"
+              className="p-2"
               alt="M-W Space logo"
             />
           </div>

@@ -8,9 +8,9 @@ export default function AboutSummary() {
         className="opacity-80 w-4/5 mt-4 duration-200 ease-out 
 					data-closed:-translate-y-6 data-closed:opacity-0"
       >
-        A full-stack software engineer who is also interested in graphic design.
-        Currently spending my free time developing things to learn more about
-        IT-related things.
+        A server-side engineer who is also interested in art. <br />
+        Currently spending my free time exploring new skills on <br />
+        software development, design, and gaming.
       </div>
     </>
   );

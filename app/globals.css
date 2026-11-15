@@ -190,11 +190,11 @@ body {
 	@keyframes terminal-popup {
 		0% {
 			transform: translateY(120%);
-			opacity: 100%;
+			visibility: visible;
 		}
 		100% {
 			transform: translateY(0%);
-			opacity: 100%;
+			visibility: visible;
 		}
 	};
 
@@ -202,11 +202,11 @@ body {
 	@keyframes navbar-popup {
 		0% {
 			transform: scale(0);
-			opacity: 100%;
+			visibility: visible;
 		}
 		100% {
 			transform: scale(1);
-			opacity: 100%;
+			visibility: visible;
 		}
 	};
 

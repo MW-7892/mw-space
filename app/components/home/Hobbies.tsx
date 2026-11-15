@@ -6,13 +6,13 @@ import { MdBook } from "react-icons/md";
 const hobbyData = [
   {
     icon: <IoIosUmbrella />,
-    name: "vtuber",
+    name: "Vtuber",
     description: "A fan of certain illustrator-vtuber",
   },
   {
     icon: <IoGameController />,
-    name: "maimai",
-    description: "Around 15500 rating",
+    name: "Rhythm game",
+    description: "maimai, CHUNITHM, osu!",
   },
   {
     icon: <MdBook />,

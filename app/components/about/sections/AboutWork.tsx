@@ -2,6 +2,20 @@ import SectionTemplate, { AboutData } from "@/components/about/SectionTemplate";
 
 export const work: AboutData[] = [
   {
+    suptitle: "Apr 2026 - Present",
+    title: "Server-side Engineer",
+    subtitle: {
+      name: "@ LY Corporation",
+      link: "https://www.lycorp.co.jp/en/",
+    },
+    preview: "Maintain and develop server-side features of LINE Sticker",
+    description: [
+      "Develop and deploy new internal features for LINE Stickers, Themes, and Emojis such as recommendation endpoints",
+      "Coordinate with planners to develop projects impacting over 30 million users",
+      "Monitor and maintain servers handling Sticker sending and purchasing with 99.9% uptime on high traffic",
+    ],
+  },
+  {
     suptitle: "Sep 2023 - Feb 2026",
     title: "Full-Stack Developer Internship",
     subtitle: {

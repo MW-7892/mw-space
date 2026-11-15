@@ -9,7 +9,7 @@ import {
 } from "react-icons/md";
 
 const aboutData = [
-  "Server-side engineer at ◻️◻️◻️◻️◻️◻️",
+  "Server-side engineer at LY Corporation",
   "Institute of Science Tokyo (formerly Tokyo Tech) alumni",
   "International Olympiad in Informatics (IOI) contestant",
 ];

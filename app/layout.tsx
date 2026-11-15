@@ -30,22 +30,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-clip lg:overflow-y-clip">
       <body className={`${spaceGrotesk.variable} ${dmMono.variable} font-body`}>
         <PageLoading />
-        <div className="-z-10 fixed inset-0">
+        <div className="-z-10 fixed inset-0 overflow-hidden">
           <ParticlesComponent />
         </div>
         <div className="flex flex-col lg:flex-row justify-center gap-x-8 px-4 h-fit">
           <MobileNav />
-          <div className="hidden lg:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 opacity-0">
+          <div className="hidden lg:block w-[200px] h-fit animate-navbar-popup animation-delay-1800 invisible">
             <Terminal title="navbar">
               <NavBar />
             </Terminal>
           </div>
           <div
             className="animate-terminal-popup h-fit w-full lg:max-w-[720px] flex justify-center
-							animation-delay-1200 ease-out opacity-0"
+							animation-delay-1200 ease-out invisible"
           >
             <Terminal isFillHeight title="mw-7892">
               {children}

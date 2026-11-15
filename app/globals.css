@@ -2,7 +2,7 @@
 
 :root {
   --p: 1rem;
-  --font-scale: 1.15;
+  --font-scale: 1.2;
   --h6: calc(var(--p) * var(--font-scale));
   --h5: calc(var(--h6) * var(--font-scale));
   --h4: calc(var(--h5) * var(--font-scale));

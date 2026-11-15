@@ -57,7 +57,7 @@ w-full flex justify-between opacity-85 group-hover:opacity-100`}
         >
           <div className="w-4/5">
             <p className="font-bold text-secondary mb-1">{suptitle}</p>
-            <h5 className="line-height-xl">{title}</h5>
+            <h6 className="line-height-xl font-semibold">{title}</h6>
             <p
               className="font-title w-fit font-normal opacity-65
 							mix-blend-screen hover:underline underline-offset-4"
@@ -102,7 +102,7 @@ export default function SectionTemplate({
   return (
     <>
       <div className="w-fit mb-5">
-        <h3 className="text-primary">{title}</h3>
+        <h4 className="text-primary">{title}</h4>
       </div>
       <div className="grid grid-cols-1 gap-y-5">
         {data.map((item) => {
@@ -134,7 +134,7 @@ export default function SectionTemplate({
                   <p className="font-bold text-secondary mb-1">
                     {item.suptitle}
                   </p>
-                  <h5 className="line-height-xl">{item.title}</h5>
+                  <h6 className="line-height-xl font-semibold">{item.title}</h6>
                   <p
                     className="font-title w-fit font-normal opacity-70
 										mix-blend-screen hover:underline underline-offset-4"

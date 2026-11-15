@@ -14,10 +14,14 @@ import {
   SiPhp,
   SiPython,
   SiReact,
+  SiReactivex,
+  SiSpringboot,
   SiTypescript,
   SiUbuntu,
+  SiVuedotjs,
 } from "react-icons/si";
 import SkillGrid from "../SkillGrid";
+import { FaJava } from "react-icons/fa";
 
 interface Skill {
   name: string;
@@ -33,10 +37,11 @@ export const skills: AboutDataSkill[] = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "C++", icon: <SiCplusplus /> },
-      { name: "Python", icon: <SiPython /> },
-      { name: "Javascript", icon: <SiJavascript /> },
+      { name: "Java", icon: <FaJava /> },
       { name: "Typescript", icon: <SiTypescript /> },
+      { name: "Python", icon: <SiPython /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "Javascript", icon: <SiJavascript /> },
       { name: "PHP", icon: <SiPhp /> },
       { name: "SQL", icon: <SiMysql /> },
     ],
@@ -44,11 +49,13 @@ export const skills: AboutDataSkill[] = [
   {
     title: "Tools & Frameworks",
     skills: [
-      { name: "React.js", icon: <SiReact /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
       { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Vue.js", icon: <SiVuedotjs /> },
+      { name: "RxJava", icon: <SiReactivex /> },
+      { name: "React.js", icon: <SiReact /> },
       { name: "Laravel", icon: <SiLaravel /> },
       { name: "GraphQL", icon: <SiGraphql /> },
-      { name: "Arch Linux", icon: <SiArchlinux /> },
       { name: "Ubuntu", icon: <SiUbuntu /> },
       { name: "Neovim", icon: <SiNeovim /> },
       { name: "Git", icon: <SiGithub /> },
